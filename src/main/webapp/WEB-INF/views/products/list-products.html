@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>mainpage</title>
+</head>
+<body>
+
+<div align="center">
+    <h1>Products List</h1>
+    <br>
+    <table border="1" cellpadding="10">
+        <thead>
+        <tr>
+            <th>id</th>
+            <th>name</th>
+            <th>category</th>
+            <th>man_firm</th>
+            <th>unit</th>
+            <th>unit price</th>
+            <th>amount</th>
+            <th>date of last delivery</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="product: ${products}">
+            <td th:text="${product.id}"></td>
+
+            <td th:text="${product.name}"></td>
+
+            <td th:text="${product.category_id.getName()}"></td>
+
+            <td th:text="${product.manFirm_id.getName()}"></td>
+
+            <td th:text="${product.unit_id.getName()}"></td>
+
+            <td th:text="${product.unit_price}"></td>
+
+            <td th:text="${product.amount}"></td>
+
+            <td th:text="${#calendars.format(product.dateTime, 'dd/MM/yyyy HH:mm')}"></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+</body>
+</html>
