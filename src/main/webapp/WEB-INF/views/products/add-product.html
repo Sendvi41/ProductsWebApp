@@ -11,7 +11,7 @@
 
     <h1>Add New Product</h1>
     <br/>
-    <form action="#" th:action="@{/saveProduct}" th:object="${product}"
+    <form action="#" th:action="@{/saveproduct}" th:object="${product}"
           method="post">
 
         <table border="0" cellpadding="10">
@@ -49,8 +49,8 @@
                     <form>
                         <select th:field="*{unit_id}">
                             <option value="0">select unit</option>
-                            <option th:each="unit : ${units}" th:value="${unit .id}"
-                                    th:text="${unit .name}"></option>
+                            <option th:each="unit : ${units}" th:value="${unit.id}"
+                                    th:text="${unit.name}"></option>
                         </select>
                     </form>
                 </td>
@@ -65,7 +65,7 @@
             </tr>
             <tr>
                 <td>Date:</td>
-                <td> <input type="date" id="datetime-local"   th:field="*{dateTime}"  /></td>
+                <td> <input type="date" id="datetime-local"  th:field="*{dateTime}"  /></td>
             </tr>
             <tr>
                 <td colspan="2">

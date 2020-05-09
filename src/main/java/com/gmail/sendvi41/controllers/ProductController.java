@@ -50,10 +50,10 @@ public class ProductController {
         return "products/add-product";
     }
 
-    @PostMapping("/saveProduct")
+    @PostMapping("/saveproduct")
     public String saveCustomer(@ModelAttribute("product") Product product) {
         productServiceInterface.saveProduct(product);
-        return "products/list-products";
+        return "redirect:/";
     }
 
 

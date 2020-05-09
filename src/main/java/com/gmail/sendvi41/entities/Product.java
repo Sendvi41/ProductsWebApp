@@ -38,6 +38,7 @@ public class Product {
     private int amount;
 
     @Column(name = "date_of_last_delivery", nullable = false)
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date dateTime;
 
 
