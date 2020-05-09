@@ -31,7 +31,8 @@ public class ProductService implements ProductServiceInterface {
     @Override
     @Transactional
     public Product getProduct(Long id) throws ServiceResourceNotFoundException {
-        return productRepository.findById(id).orElseThrow(() -> new ServiceResourceNotFoundException("No such id "+id));
+        return productRepository.findById(id).orElseThrow(() -> new ServiceResourceNotFoundException("No such id "+id)
+        );
 
     }
 

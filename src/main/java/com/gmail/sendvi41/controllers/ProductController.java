@@ -2,11 +2,16 @@ package com.gmail.sendvi41.controllers;
 
 
 import com.gmail.sendvi41.entities.Product;
+import com.gmail.sendvi41.services.CategoryService;
+import com.gmail.sendvi41.services.CategoryServiceInterface;
 import com.gmail.sendvi41.services.ProductServiceInterface;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 
 import java.util.List;
 
@@ -15,12 +20,31 @@ import java.util.List;
 public class ProductController {
 
     @Autowired
+    @Qualifier("productService")
     ProductServiceInterface productServiceInterface;
+
+    @Autowired
+    @Qualifier("categoryService")
+    CategoryServiceInterface categoryServiceInterface;
 
     @GetMapping("/")
     public  String showListProducts(Model theModel){
         List <Product> products = productServiceInterface.getProducts();
         theModel.addAttribute("products", products);
+        return "products/list-products";
+    }
+
+    @GetMapping("/add")
+    public String showAddProductPage(Model model) {
+        Product product = new Product();
+        model.addAttribute("product", product);
+        model.addAttribute("categories", categoryServiceInterface.getCategories());
+        return "products/add-product";
+    }
+
+    @PostMapping("/saveProduct")
+    public String saveCustomer(@ModelAttribute("product") Product product) {
+        productServiceInterface.saveProduct(product);
         return "products/list-products";
     }
 

@@ -9,6 +9,8 @@
 
 <div align="center">
     <h1>Products List</h1>
+    <a href="/add">Add product</a>
+    <br>
     <br>
     <table border="1" cellpadding="10">
         <thead>
@@ -40,6 +42,12 @@
             <td th:text="${product.amount}"></td>
 
             <td th:text="${#calendars.format(product.dateTime, 'dd/MM/yyyy HH:mm')}"></td>
+<!--            <td>-->
+<!--                <a th:href="/@{'/update/' + ${product.id}}">Edit</a>-->
+<!--                &nbsp;&nbsp;&nbsp;-->
+<!--                <a th:href="/@{'/delete/' + ${product.id}}">Delete</a>-->
+<!--            </td>-->
+
         </tr>
         </tbody>
     </table>
