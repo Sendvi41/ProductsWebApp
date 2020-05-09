@@ -41,7 +41,7 @@
 
             <td th:text="${product.amount}"></td>
 
-            <td th:text="${#calendars.format(product.dateTime, 'dd/MM/yyyy HH:mm')}"></td>
+            <td th:text="${#calendars.format(product.dateTime, 'dd/MM/yyyy')}"></td>
 <!--            <td>-->
 <!--                <a th:href="/@{'/update/' + ${product.id}}">Edit</a>-->
 <!--                &nbsp;&nbsp;&nbsp;-->

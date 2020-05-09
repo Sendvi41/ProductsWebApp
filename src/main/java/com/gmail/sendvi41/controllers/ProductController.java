@@ -2,9 +2,7 @@ package com.gmail.sendvi41.controllers;
 
 
 import com.gmail.sendvi41.entities.Product;
-import com.gmail.sendvi41.services.CategoryService;
-import com.gmail.sendvi41.services.CategoryServiceInterface;
-import com.gmail.sendvi41.services.ProductServiceInterface;
+import com.gmail.sendvi41.services.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
@@ -27,6 +25,14 @@ public class ProductController {
     @Qualifier("categoryService")
     CategoryServiceInterface categoryServiceInterface;
 
+    @Autowired
+    @Qualifier("manFirmService")
+    ManFirmServiceInterface manFirmServiceInterface;
+
+    @Autowired
+    @Qualifier("unitService")
+    UnitServiceInterface unitServiceInterface;
+
     @GetMapping("/")
     public  String showListProducts(Model theModel){
         List <Product> products = productServiceInterface.getProducts();
@@ -39,6 +45,8 @@ public class ProductController {
         Product product = new Product();
         model.addAttribute("product", product);
         model.addAttribute("categories", categoryServiceInterface.getCategories());
+        model.addAttribute("manfirms", manFirmServiceInterface.getManFirms());
+        model.addAttribute("units", unitServiceInterface.getUnits());
         return "products/add-product";
     }
 

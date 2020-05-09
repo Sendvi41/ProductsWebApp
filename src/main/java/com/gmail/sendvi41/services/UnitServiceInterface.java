@@ -8,7 +8,7 @@ import java.util.List;
 
 public interface UnitServiceInterface {
 
-    List<Unit> getUnit();
+    List<Unit> getUnits();
 
     void saveUnit(Unit unit);
 

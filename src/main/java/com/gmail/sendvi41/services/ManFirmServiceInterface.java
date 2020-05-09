@@ -8,7 +8,7 @@ import java.util.List;
 
 public interface ManFirmServiceInterface {
 
-    List<ManFirm> getManFirm();
+    List<ManFirm> getManFirms();
 
     void saveManFirm(ManFirm manFirm);
 
