@@ -3,7 +3,6 @@ package com.gmail.sendvi41.config;
 
 import java.util.Properties;
 
-
 import javax.sql.DataSource;
 
 import org.springframework.beans.factory.annotation.Autowired;

@@ -37,8 +37,10 @@ public class Product {
     @Column(name = "amount", nullable = false)
     private int amount;
 
+
+    @Temporal(TemporalType.TIMESTAMP)
+    @DateTimeFormat(pattern = "yyyy-MM-dd'T'HH:mm")
     @Column(name = "date_of_last_delivery", nullable = false)
-    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date dateTime;
 
 
@@ -101,7 +103,6 @@ public class Product {
     public void setAmount(int amount) {
         this.amount = amount;
     }
-
 
     public Date getDateTime() {
         return dateTime;

@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import java.sql.Date;
 import java.util.List;
 
 @Controller
@@ -34,13 +35,13 @@ public class ProductController {
     UnitServiceInterface unitServiceInterface;
 
     @GetMapping("/")
-    public  String showListProducts(Model theModel){
-        List <Product> products = productServiceInterface.getProducts();
+    public String showListProducts(Model theModel) {
+        List<Product> products = productServiceInterface.getProducts();
         theModel.addAttribute("products", products);
         return "products/list-products";
     }
 
-    @GetMapping("/add")
+    @GetMapping("/addproduct")
     public String showAddProductPage(Model model) {
         Product product = new Product();
         model.addAttribute("product", product);
@@ -51,11 +52,11 @@ public class ProductController {
     }
 
     @PostMapping("/saveproduct")
-    public String saveCustomer(@ModelAttribute("product") Product product) {
+    public String saveProduct(@ModelAttribute("product") Product product) {
         productServiceInterface.saveProduct(product);
         return "redirect:/";
-    }
 
+    }
 
 
 }

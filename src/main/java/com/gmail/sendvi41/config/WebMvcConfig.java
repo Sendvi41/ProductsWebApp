@@ -6,13 +6,17 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.ViewResolverRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
+import org.thymeleaf.extras.java8time.dialect.Java8TimeDialect;
 import org.thymeleaf.spring5.SpringTemplateEngine;
 import org.thymeleaf.spring5.templateresolver.SpringResourceTemplateResolver;
 import org.thymeleaf.spring5.view.ThymeleafViewResolver;
+import nz.net.ultraq.thymeleaf.LayoutDialect;
+import java.util.Date;
 
 @Configuration
 @ComponentScan("com.gmail.sendvi41.controllers")
@@ -31,7 +35,6 @@ public class WebMvcConfig implements WebMvcConfigurer {
         templateResolver.setSuffix(".html");
         return templateResolver;
     }
-
 
     @Bean
     public SpringTemplateEngine templateEngine() {
@@ -54,6 +57,11 @@ public class WebMvcConfig implements WebMvcConfigurer {
         registry.addResourceHandler("/resources/**").addResourceLocations("/resources/");
         registry.addResourceHandler("/*.html").addResourceLocations("/WEB-INF/");
     }
+
+
+
+
+
 
 
 }
