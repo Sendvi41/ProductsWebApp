@@ -61,10 +61,11 @@
                 <td>Amount:</td>
                 <td><input type="text" th:field="*{amount}"/></td>
             </tr>
-            <!--            <tr>-->
-            <!--                <td>Date:</td>-->
-            <!--                <td><input type="date" id="datetime-local"   th:value="*{dateTime}" th:field="*{dateTime}"/></td>-->
-            <!--            </tr>-->
+            <tr>
+                <td>Date:</td>
+                <td><input id="datetime-local" type="text" placeholder="dd/mm/yyyy" th:field="*{dateTime}"></td>
+<!--                <td><input type="text"  th:field="*{dateTime}"/></td>-->
+            </tr>
             <tr>
                 <td colspan="2">
                     <button type="submit">Add</button>
@@ -73,8 +74,9 @@
         </table>
     </form>
 </div>
-<!--<script src="/resources/js/date.js">-->
-<!--</script>-->
-
+<script src="/resources/js/date.js">
+</script>
+<script src="/resources/js/calendar.js">
+</script>
 </body>
 </html>

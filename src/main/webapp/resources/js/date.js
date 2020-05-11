@@ -10,7 +10,7 @@ function date() {
         mm='0' + mm
     }
 
-    today = yyyy + '-' + mm + '-' + dd;
+    today = dd + '/' +  mm + '/'+ yyyy ;
     document.getElementById("datetime-local").setAttribute("value",  today);
 
 }

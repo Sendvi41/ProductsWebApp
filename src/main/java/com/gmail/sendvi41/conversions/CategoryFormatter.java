@@ -1,4 +1,4 @@
-package com.gmail.sendvi41.conversion;
+package com.gmail.sendvi41.conversions;
 
 import com.gmail.sendvi41.entities.Category;
 import com.gmail.sendvi41.services.CategoryServiceInterface;

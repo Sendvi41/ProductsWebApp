@@ -1,9 +1,7 @@
 package com.gmail.sendvi41.config;
 
 
-import com.gmail.sendvi41.conversion.CategoryFormatter;
-import com.gmail.sendvi41.conversion.ManFirmFormatter;
-import com.gmail.sendvi41.conversion.UnitFormatter;
+import com.gmail.sendvi41.conversions.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
@@ -19,6 +17,8 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import org.thymeleaf.spring5.SpringTemplateEngine;
 import org.thymeleaf.spring5.templateresolver.SpringResourceTemplateResolver;
 import org.thymeleaf.spring5.view.ThymeleafViewResolver;
+
+import java.util.Date;
 
 @Configuration
 @ComponentScan("com.gmail.sendvi41.controllers")
@@ -96,11 +96,14 @@ public class WebMvcConfig implements WebMvcConfigurer {
 
 
 
+
     @Override
     public void addFormatters(FormatterRegistry registry) {
         registry.addFormatter(typeFormatter());
         registry.addFormatter(manFirmFormatter());
         registry.addFormatter(unitFormatter());
+
+
     }
 }
 
