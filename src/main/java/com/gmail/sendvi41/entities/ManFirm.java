@@ -2,6 +2,7 @@ package com.gmail.sendvi41.entities;
 
 
 import javax.persistence.*;
+import java.util.Objects;
 import java.util.Set;
 
 @Entity
@@ -45,5 +46,20 @@ public class ManFirm {
 
     public void setProducts(Set<Product> products) {
         this.products = products;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        ManFirm manFirm = (ManFirm) o;
+        return Objects.equals(id, manFirm.id) &&
+                Objects.equals(name, manFirm.name) &&
+                Objects.equals(products, manFirm.products);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, name, products);
     }
 }

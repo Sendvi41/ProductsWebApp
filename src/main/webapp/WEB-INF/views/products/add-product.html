@@ -13,34 +13,33 @@
     <br/>
     <form action="#" th:action="@{/saveproduct}" th:object="${product}"
           method="post">
-
         <table border="0" cellpadding="10">
             <tr>
                 <td>Product Name:</td>
-                <td><input type="text"  th:field="*{name}"/></td>
+                <td><input type="text" th:field="*{name}"/></td>
             </tr>
             <tr>
                 <td>Category:</td>
                 <td>
-                    <form>
+                    <div>
                         <select th:field="*{category_id}">
-                            <option value="0">select category</option>
-                            <option th:each="category : ${categories}" th:value="${category.id}"
-                                    th:text="${category.name}"></option>
+                            <option th:each="cat : ${categories}" th:value="${cat.id}"
+                                    th:text="${cat.name}">
+                            </option>
                         </select>
-                    </form>
+                    </div>
                 </td>
             </tr>
+
             <tr>
                 <td>Manufacturing firm:</td>
                 <td>
-                    <form>
-                        <select th:field="*{manFirm_id}">
-                            <option value="0">select firm</option>
-                            <option th:each="manfirm : ${manfirms}" th:value="${manfirm.id}"
-                                    th:text="${manfirm.name}"></option>
-                        </select>
-                    </form>
+
+                    <select th:field="*{manFirm_id}">
+                        <option th:each="manf : ${manfirms}" th:value="${manf.id}"
+                                th:text="${manf.name}"></option>
+                    </select>
+
                 </td>
             </tr>
             <tr>
@@ -48,7 +47,6 @@
                 <td>
                     <form>
                         <select th:field="*{unit_id}">
-                            <option value="0">select unit</option>
                             <option th:each="unit : ${units}" th:value="${unit.id}"
                                     th:text="${unit.name}"></option>
                         </select>
@@ -63,20 +61,20 @@
                 <td>Amount:</td>
                 <td><input type="text" th:field="*{amount}"/></td>
             </tr>
-            <tr>
-                <td>Date:</td>
-                <td><input type="date" id="datetime-local" th:field="*{dateTime}"/></td>
-            </tr>
+            <!--            <tr>-->
+            <!--                <td>Date:</td>-->
+            <!--                <td><input type="date" id="datetime-local"   th:value="*{dateTime}" th:field="*{dateTime}"/></td>-->
+            <!--            </tr>-->
             <tr>
                 <td colspan="2">
-                    <button type="submit" >Add</button>
+                    <button type="submit">Add</button>
                 </td>
             </tr>
         </table>
     </form>
 </div>
-<script src="/resources/js/date.js">
-</script>
+<!--<script src="/resources/js/date.js">-->
+<!--</script>-->
 
 </body>
 </html>

@@ -4,7 +4,8 @@ package com.gmail.sendvi41.entities;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
-import java.util.Date;
+import java.sql.Date;
+import java.util.Objects;
 
 @Entity
 @Table(name = "products")
@@ -38,10 +39,10 @@ public class Product {
     private int amount;
 
 
-    @Temporal(TemporalType.TIMESTAMP)
-    @DateTimeFormat(pattern = "yyyy-MM-dd'T'HH:mm")
-    @Column(name = "date_of_last_delivery", nullable = false)
-    private Date dateTime;
+//    @Temporal(TemporalType.DATE)
+//    @DateTimeFormat(pattern = "yyyy-MM-dd")
+//    @Column(name = "date_of_last_delivery", nullable = false)
+//    private Date dateTime;
 
 
     public Product() {
@@ -104,13 +105,15 @@ public class Product {
         this.amount = amount;
     }
 
-    public Date getDateTime() {
-        return dateTime;
-    }
+//    public Date getDateTime() {
+//        return dateTime;
+//    }
+//
+//    public void setDateTime(Date dateTime) {
+//        this.dateTime = dateTime;
+//    }
 
-    public void setDateTime(Date dateTime) {
-        this.dateTime = dateTime;
-    }
+
 
     @Override
     public String toString() {
@@ -122,7 +125,7 @@ public class Product {
                 ", unit_id=" + unit_id +
                 ", unit_price=" + unit_price +
                 ", amount=" + amount +
-                ", dateTime=" + dateTime +
+//                ", dateTime=" + dateTime +
                 '}';
     }
 
