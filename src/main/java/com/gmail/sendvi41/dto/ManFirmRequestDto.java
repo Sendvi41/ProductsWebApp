@@ -20,15 +20,18 @@ public class ManFirmRequestDto {
     private String manFirm;
     private Long  sumamount;
     private String categories;
-    private Long percent;
+    private Long amountcategor;
+    private Double percent;
 
 
 
     public ManFirmRequestDto(String manFirm, Long sumamount, String categories, Long amountcategor) {
         this.manFirm = manFirm;
         this.sumamount = sumamount;
+        this.amountcategor=amountcategor;
         this.categories = categories;
-        this.percent = amountcategor/sumamount;
+        this.percent = (double)Math.round(((double)amountcategor/sumamount)*1000)/10;
+
     }
 
 
@@ -48,6 +51,14 @@ public class ManFirmRequestDto {
         this.sumamount = sumamount;
     }
 
+    public Long getAmountcategor() {
+        return amountcategor;
+    }
+
+    public void setAmountcategor(Long amountcategor) {
+        this.amountcategor = amountcategor;
+    }
+
     public String getCategories() {
         return categories;
     }
@@ -56,27 +67,13 @@ public class ManFirmRequestDto {
         this.categories = categories;
     }
 
-    public Long getPercent() {
+    public Double getPercent() {
         return percent;
     }
 
-    public void setPercent(Long percent) {
+    public void setPercent(Double percent) {
         this.percent = percent;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        ManFirmRequestDto that = (ManFirmRequestDto) o;
-        return Objects.equals(manFirm, that.manFirm) &&
-                Objects.equals(sumamount, that.sumamount) &&
-                Objects.equals(categories, that.categories) &&
-                Objects.equals(percent, that.percent);
-    }
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(manFirm, sumamount, categories, percent);
-    }
 }

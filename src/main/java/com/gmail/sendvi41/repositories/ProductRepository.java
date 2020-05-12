@@ -1,7 +1,6 @@
 package com.gmail.sendvi41.repositories;
 
 
-
 import com.gmail.sendvi41.dto.ManFirmRequestDto;
 import com.gmail.sendvi41.entities.Product;
 
@@ -22,13 +21,12 @@ public interface ProductRepository extends JpaRepository<Product, Long> {
     Product findByName(@Param("name") String name);
 
 
-    @Query("select new com.gmail.sendvi41.dto.ManFirmRequestDto(p.manFirm_id.name, " +
-            "sum(p.amount) , " +
-            "p.category_id.name, sum(p.amount)" +
-            ") from Product p inner join p.category_id  inner JOIN  p.manFirm_id " +
-            "group by p.manFirm_id.name, p.category_id.name\n" +
+    @Query("select new com.gmail.sendvi41.dto.ManFirmRequestDto(p.manFirm_id.name,(select sum(p2.amount) from Product p2 group by p2.manFirm_id.name " +
+            "having p2.manFirm_id.name= p.manFirm_id.name), p.category_id.name, sum(p.amount)) " +
+            "from Product p " +
+            "group by p.manFirm_id.name, p.category_id.name " +
             "order by  p.manFirm_id.name")
     List<ManFirmRequestDto> getJoinManFirmCategory();
 }
-//    select sum(p2.amount) from Product p2 join  FETCH p2.manFirm_id group by p2.manFirm_id.name\n" +
+//    select sum(p2.amount) from Product  group by p2.manFirm_id.name\n" +
 //        "                         having p2.manFirm_id.name=p.manFirm_id.name)
