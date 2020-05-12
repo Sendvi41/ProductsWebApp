@@ -1,11 +1,39 @@
 package com.gmail.sendvi41.entities;
 
 
-import org.springframework.format.annotation.DateTimeFormat;
+import com.gmail.sendvi41.dto.ManFirmRequestDto;
 
 import javax.persistence.*;
 import java.util.Date;
-import java.util.Objects;
+
+
+//@SqlResultSetMapping(
+//        name="MainFirmRequest",
+//        classes={
+//                @ConstructorResult(
+//                        targetClass=com.gmail.sendvi41.dto.ManFirmRequestDto.class,
+//                        columns={
+//                                @ColumnResult(name="name", type=String.class),
+//                                @ColumnResult(name="sumamount", type=Integer.class),
+//                                @ColumnResult(name="categories", type=String.class),
+//                                @ColumnResult(name="amountcategory", type=Integer.class)
+//                        })
+//        })
+//@NamedNativeQuery(
+//        name = "Product.MainFirmReq",
+//        resultClass = ManFirmRequestDto.class,
+//        query = "select  MAN_FIRMS.NAME as name,\n" +
+//                "       (select sum(p2.AMOUNT) from PRODUCTS p2 join MAN_FIRMS MF on p2.MAN_FIRM_ID = MF.ID group by MF.NAME\n" +
+//                "                         having MF.NAME=MAN_FIRMS.NAME) as sumamount ,\n" +
+//                "       CATEGORIES.NAME as categories ,\n" +
+//                "        round(sum(AMOUNT)/(select sum(p2.AMOUNT) from PRODUCTS p2 join MAN_FIRMS MF on p2.MAN_FIRM_ID = MF.ID group by MF.NAME\n" +
+//                "                                     having MF.NAME=MAN_FIRMS.NAME),3) as amountcategory \n" +
+//                "from  PRODUCTS join MAN_FIRMS on PRODUCTS.MAN_FIRM_ID = MAN_FIRMS.ID\n" +
+//                "    join CATEGORIES on PRODUCTS.CATEGORY_ID = CATEGORIES.ID\n" +
+//                "group by MAN_FIRMS.NAME, CATEGORIES.NAME\n" +
+//                "order by  MAN_FIRMS.NAME",
+//        resultSetMapping = "MainFirmRequest"
+//)
 
 @Entity
 @Table(name = "products")

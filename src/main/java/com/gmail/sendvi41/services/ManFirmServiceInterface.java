@@ -10,6 +10,7 @@ public interface ManFirmServiceInterface {
 
     List<ManFirm> getManFirms();
 
+
     void saveManFirm(ManFirm manFirm);
 
     ManFirm getManFirm(Long id) throws ServiceResourceNotFoundException;

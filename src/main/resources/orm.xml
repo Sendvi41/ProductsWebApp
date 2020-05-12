@@ -1,0 +1,14 @@
+<named-native-query name="productEntity.getManFirmDetails">
+    <query><![CDATA[
+        select  MAN_FIRMS.NAME,
+       (select sum(p2.AMOUNT) from PRODUCTS p2 join MAN_FIRMS MF on p2.MAN_FIRM_ID = MF.ID group by MF.NAME
+                         having MF.NAME=MAN_FIRMS.NAME) ,
+       CATEGORIES.NAME,
+        round(sum(AMOUNT)/(select sum(p2.AMOUNT) from PRODUCTS p2 join MAN_FIRMS MF on p2.MAN_FIRM_ID = MF.ID group by MF.NAME
+                                     having MF.NAME=MAN_FIRMS.NAME),3)
+from  PRODUCTS join MAN_FIRMS on PRODUCTS.MAN_FIRM_ID = MAN_FIRMS.ID
+    join CATEGORIES on PRODUCTS.CATEGORY_ID = CATEGORIES.ID
+group by MAN_FIRMS.NAME, CATEGORIES.NAME
+order by  MAN_FIRMS.NAME
+     ]]></query>
+</named-native-query>

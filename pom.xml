@@ -20,6 +20,7 @@
         <hibernate.version>5.2.17.Final</hibernate.version>
         <hibernate.validator>5.4.1.Final</hibernate.validator>
         <log4j.version>1.2.17</log4j.version>
+        <org.mapstruct.version>1.2.0.Final</org.mapstruct.version>
 
 
     </properties>
@@ -146,6 +147,12 @@
             <groupId>org.thymeleaf</groupId>
             <artifactId>thymeleaf</artifactId>
             <version>3.0.11.RELEASE</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.mapstruct</groupId>
+            <artifactId>mapstruct-jdk8</artifactId>
+            <version>${org.mapstruct.version}</version>
         </dependency>
 
     </dependencies>

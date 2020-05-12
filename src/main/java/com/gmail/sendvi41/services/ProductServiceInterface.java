@@ -1,5 +1,6 @@
 package com.gmail.sendvi41.services;
 
+import com.gmail.sendvi41.dto.ManFirmRequestDto;
 import com.gmail.sendvi41.entities.Product;
 import com.gmail.sendvi41.exceptions.ServiceResourceNotFoundException;
 
@@ -9,6 +10,8 @@ public interface ProductServiceInterface {
     List <Product> getProducts();
 
     void saveProduct(Product product);
+
+    List<ManFirmRequestDto> getJoinManFirmCategory();
 
     public boolean findByName (String name);
 

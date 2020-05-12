@@ -24,6 +24,7 @@ public class ManFirm {
     public ManFirm() {
     }
 
+
     public Long getId() {
         return id;
     }

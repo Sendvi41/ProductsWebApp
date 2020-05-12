@@ -1,5 +1,6 @@
 package com.gmail.sendvi41.services;
 
+import com.gmail.sendvi41.dto.ManFirmRequestDto;
 import com.gmail.sendvi41.entities.Product;
 import com.gmail.sendvi41.exceptions.ServiceResourceNotFoundException;
 import com.gmail.sendvi41.repositories.ProductRepository;
@@ -16,6 +17,11 @@ public class ProductService implements ProductServiceInterface {
     ProductRepository productRepository;
 
 
+    @Override
+    @Transactional
+    public List<ManFirmRequestDto> getJoinManFirmCategory() {
+        return productRepository.getJoinManFirmCategory();
+    }
 
     @Override
     @Transactional

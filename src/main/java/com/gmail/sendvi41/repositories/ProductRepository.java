@@ -1,33 +1,34 @@
 package com.gmail.sendvi41.repositories;
 
 
-import com.gmail.sendvi41.dto.CategoryRequest;
+
+import com.gmail.sendvi41.dto.ManFirmRequestDto;
 import com.gmail.sendvi41.entities.Product;
+
+
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
-import java.util.Date;
 import java.util.List;
+import java.util.Objects;
 
 @Repository
 public interface ProductRepository extends JpaRepository<Product, Long> {
-//    @Modifying
-//    @Query("update Product t set t.name = :name, t.category_id = :category_id, t.manFirm_id=:manFirm_id," +
-//            "t.unit_id=:unit_id, t.unit_price=:unit_price, t.amount=:amount, t.dateTime=:dateTime where t.id = :id")
-//    void updateProduct(@Param("id") Long id, @Param("name") String name, @Param("category_id") int category_id,
-//                  @Param("manFirm_id") int manFirm_id, @Param("unit_id") int unit_id, @Param("unit_price") double unit_price,
-//                  @Param("amount") int amount, @Param("dateTime") Date dateTime);
-
-    @Query("select t from Product t where t.name = :name")
-    Product findByName( @Param("name") String name);
 
 
-    @Query("select new from Product t where t.name = :name")
-    List<CategoryRequest> getJoinManFirmCategory();
+    @Query("select p from Product p where p.name = :name")
+    Product findByName(@Param("name") String name);
+
+
+    @Query("select new com.gmail.sendvi41.dto.ManFirmRequestDto(p.manFirm_id.name, " +
+            "sum(p.amount) , " +
+            "p.category_id.name, sum(p.amount)" +
+            ") from Product p inner join p.category_id  inner JOIN  p.manFirm_id " +
+            "group by p.manFirm_id.name, p.category_id.name\n" +
+            "order by  p.manFirm_id.name")
+    List<ManFirmRequestDto> getJoinManFirmCategory();
 }
-
-
-
+//    select sum(p2.amount) from Product p2 join  FETCH p2.manFirm_id group by p2.manFirm_id.name\n" +
+//        "                         having p2.manFirm_id.name=p.manFirm_id.name)
