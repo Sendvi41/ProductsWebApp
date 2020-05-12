@@ -10,6 +10,8 @@ public interface ProductServiceInterface {
 
     void saveProduct(Product product);
 
+    public boolean findByName (String name);
+
     Product getProduct(Long id) throws ServiceResourceNotFoundException ;
 
     void deleteProduct(Long id)  throws ServiceResourceNotFoundException;

@@ -22,7 +22,6 @@ import java.util.List;
 public class ProductController {
 
 
-
     @Autowired
     @Qualifier("productService")
     ProductServiceInterface productServiceInterface;
@@ -57,8 +56,16 @@ public class ProductController {
     }
 
     @PostMapping("/saveproduct")
-    public String saveProduct(@ModelAttribute("product") Product product) {
-        productServiceInterface.saveProduct(product);
+    public String saveProduct(@ModelAttribute("product") Product product, Model model) {
+
+        if (productServiceInterface.findByName(product.getName())) {
+            model.addAttribute(product);
+            return "products/productexsist";
+        } else {
+            productServiceInterface.saveProduct(product);
+        }
+
+
         return "redirect:/";
 
     }

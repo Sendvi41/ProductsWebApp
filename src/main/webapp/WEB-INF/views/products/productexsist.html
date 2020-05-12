@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>exsist</title>
+</head>
+<body>
+
+<div align="center">
+    <h1>A product with the such name already exists. </h1>
+    <div th:text="${product.name}"> </div>
+    <a href="/addproduct">Back</a>
+    <a href="/">Go back to main page</a>
+</div>
+
+</body>
+</html>

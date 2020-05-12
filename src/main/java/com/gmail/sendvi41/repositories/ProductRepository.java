@@ -1,6 +1,7 @@
 package com.gmail.sendvi41.repositories;
 
 
+import com.gmail.sendvi41.dto.CategoryRequest;
 import com.gmail.sendvi41.entities.Product;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
@@ -9,6 +10,7 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 import java.util.Date;
+import java.util.List;
 
 @Repository
 public interface ProductRepository extends JpaRepository<Product, Long> {
@@ -19,7 +21,12 @@ public interface ProductRepository extends JpaRepository<Product, Long> {
 //                  @Param("manFirm_id") int manFirm_id, @Param("unit_id") int unit_id, @Param("unit_price") double unit_price,
 //                  @Param("amount") int amount, @Param("dateTime") Date dateTime);
 
+    @Query("select t from Product t where t.name = :name")
+    Product findByName( @Param("name") String name);
 
+
+    @Query("select new from Product t where t.name = :name")
+    List<CategoryRequest> getJoinManFirmCategory();
 }
 
 

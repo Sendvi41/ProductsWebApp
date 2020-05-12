@@ -16,6 +16,22 @@ public class ProductService implements ProductServiceInterface {
     ProductRepository productRepository;
 
 
+
+    @Override
+    @Transactional
+    public boolean findByName (String name) {
+         if(productRepository.findByName(name)!=null)
+         {
+             return true;
+         }
+         else
+         {
+             return false;
+         }
+    }
+
+
+
     @Override
     @Transactional
     public List<Product> getProducts() {
