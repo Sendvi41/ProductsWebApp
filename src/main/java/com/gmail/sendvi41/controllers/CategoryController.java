@@ -20,6 +20,16 @@ public class CategoryController {
     CategoryServiceInterface categoryServiceInterface;
 
 
+
+
+    @GetMapping("/listcategories")
+    public String showListCategoriesPage(Model model) {
+        model.addAttribute("categories", categoryServiceInterface.getCategories());
+        return "categories/list-categories";
+    }
+
+
+
     @GetMapping("/addcategory")
     public String showAddCategoryPage(Model model) {
        Category category = new Category();
@@ -31,7 +41,7 @@ public class CategoryController {
     @PostMapping("/savecategory")
     public String saveCategory(@ModelAttribute("category") Category category) {
         categoryServiceInterface.saveCategory(category);
-        return "redirect:/";
+        return "redirect:/listcategories";
 
     }
 }
