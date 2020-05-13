@@ -1,10 +1,46 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>categories</title>
 </head>
 <body>
+
+<div align="center">
+    <h1>Categories</h1>
+
+    <br>
+    <table border="1" cellpadding="10">
+        <thead>
+        <tr>
+            <th>name category</th>
+            <th>number of names </th>
+            <th>amount of products</th>
+            <th>average price</th>
+            <th>minimum price</th>
+            <th>maximum price</th>
+
+        </tr></thead>
+        <tbody>
+        <tr th:each="category: ${categories}">
+
+            <td th:text="${category.category}"></td>
+
+            <td th:text="${category.numberNames}"></td>
+
+            <td th:text="${category.sumproduct}"></td>
+
+            <td th:text="${category.avgprice}"></td>
+
+            <td th:text="${category.minprice}"></td>
+
+            <td th:text="${category.maxprice}"></td>
+
+        </tr>
+        </tbody>
+    </table>
+</div>
 
 </body>
 </html>

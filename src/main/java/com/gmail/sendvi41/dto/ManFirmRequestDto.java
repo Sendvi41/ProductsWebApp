@@ -1,17 +1,6 @@
 package com.gmail.sendvi41.dto;
 
 
-import com.gmail.sendvi41.entities.Category;
-import com.gmail.sendvi41.entities.ManFirm;
-
-import org.springframework.stereotype.Component;
-
-import javax.persistence.ColumnResult;
-import javax.persistence.ConstructorResult;
-import javax.persistence.NamedNativeQuery;
-import javax.persistence.SqlResultSetMapping;
-import java.util.List;
-import java.util.Objects;
 
 
 

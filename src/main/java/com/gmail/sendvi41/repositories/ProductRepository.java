@@ -1,6 +1,7 @@
 package com.gmail.sendvi41.repositories;
 
 
+import com.gmail.sendvi41.dto.CategoryRequestDto;
 import com.gmail.sendvi41.dto.ManFirmRequestDto;
 import com.gmail.sendvi41.entities.Product;
 
@@ -27,6 +28,25 @@ public interface ProductRepository extends JpaRepository<Product, Long> {
             "group by p.manFirm_id.name, p.category_id.name " +
             "order by  p.manFirm_id.name")
     List<ManFirmRequestDto> getJoinManFirmCategory();
+
+
+
+
+
+    @Query("select new com.gmail.sendvi41.dto.CategoryRequestDto(p.category_id.name," +
+            "(select count(p2.name) from Product p2 where p2.category_id.name=p.category_id.name)," +
+            "(select sum(p3.amount) from Product p3 where p3.category_id.name=p.category_id.name)," +
+            "(select avg(p4.unit_price) from Product p4 where p4.category_id.name=p.category_id.name)," +
+            "(select min(p5.unit_price) from Product p5 where p5.category_id.name=p.category_id.name)," +
+            "(select max(p6.unit_price) from Product p6 where p6.category_id.name=p.category_id.name)" +
+            ")from Product p group by  p.category_id.name order by  p.category_id.name")
+    List<CategoryRequestDto> getSortCategories();
+
+
+
+
+
+
 }
 //    select sum(p2.amount) from Product  group by p2.manFirm_id.name\n" +
 //        "                         having p2.manFirm_id.name=p.manFirm_id.name)
