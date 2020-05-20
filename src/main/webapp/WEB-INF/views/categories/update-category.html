@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script
+            src="https://code.jquery.com/jquery-3.3.1.js"
+            integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+            crossorigin="anonymous">
+    </script>
+    <script>
+        $(function(){
+            $("#menu").load("resources/menu/menu.html");
+        });
+    </script>
+</head>
+<body>
+<div id="menu">
+</div>
+<div id="wrapper"><span>
+<div align="center">
+
+    <h1>Add New Category</h1>
+    <br/>
+    <form action="#" th:action="@{/update/{id}(id=${category.id})}" th:object="${category}"
+          method="post">
+
+        <table border="0" cellpadding="10">
+            <tr>
+                <td>Category Name:</td>
+                <td><input type="text"   th:field="*{name}"/></td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <button type="submit" >Update</button>
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>
+
+</span></div>
+</body>
+</html>

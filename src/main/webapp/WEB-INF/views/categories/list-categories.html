@@ -29,6 +29,7 @@
         <tr>
             <th>id</th>
             <th>name</th>
+            <th>actions</th>
         </tr>
         </thead>
         <tbody>
@@ -37,14 +38,11 @@
 
             <td th:text="${category.name}"></td>
 
-
-
-            <!--            <td th:text="${#calendars.format(product.dateTime, 'dd/MM/yyyy')}"></td>-->
-            <!--            <td>-->
-            <!--                <a th:href="/@{'/update/' + ${product.id}}">Edit</a>-->
-            <!--                &nbsp;&nbsp;&nbsp;-->
-            <!--                <a th:href="/@{'/delete/' + ${product.id}}">Delete</a>-->
-            <!--            </td>-->
+                        <td>
+                            <a th:href="@{/edit/{id} (id=${category.id}) }">Update</a>
+                            &nbsp;&nbsp;&nbsp;
+                            <a th:href="@{/delete/{id} (id=${category.id}) }">Delete</a>
+                        </td>
 
         </tr>
         </tbody>
