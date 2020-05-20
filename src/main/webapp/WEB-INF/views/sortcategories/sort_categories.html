@@ -10,14 +10,16 @@
             crossorigin="anonymous">
     </script>
     <script>
-        $(function(){
+        $(function () {
             $("#menu").load("resources/menu/menu.html");
         });
     </script>
+    <link rel="stylesheet" href="/resources/css/diagram.css">
 </head>
 <body>
 <div id="menu">
 </div>
+<div id="wrapper"><span>
 <div align="center">
     <h1>Categories</h1>
 
@@ -53,5 +55,28 @@
     </table>
 </div>
 
+
+    <div class="wrapper">
+  <h1 align="center">Distribution of products by categories</h1>
+  <div class="pie-charts">
+    <div class="pieID--micro-skills pie-chart--wrapper">
+      <div class="pie-chart">
+        <div class="pie-chart__pie"></div>
+        <ul class="pie-chart__legend">
+          <li th:each="category: ${categories}"><em th:text="${category.category}"></em><span th:text="${category.sumproduct}"></span></li>
+        </ul>
+      </div>
+    </div>
+        </div>
+         </div>
+
+
+
+    </span></div>
+
+
+
+<script src="/resources/js/diagram.js">
+</script>
 </body>
 </html>

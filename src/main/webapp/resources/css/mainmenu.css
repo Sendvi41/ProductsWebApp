@@ -54,7 +54,7 @@ nav#navigation ul li:after {
   width: 0px;
   height: 2px;
   margin: -2px 0 0 0;
-  background: #126CA1;
+  background: #126ca1;
   -webkit-transition: 150ms ease all;
   -moz-transition: 150ms ease all;
   transition: 150ms ease all;
