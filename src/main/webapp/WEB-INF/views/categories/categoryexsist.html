@@ -1,10 +1,30 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>exsist</title>
+    <script
+            src="https://code.jquery.com/jquery-3.3.1.js"
+            integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+            crossorigin="anonymous">
+    </script>
+    <script>
+        $(function(){
+            $("#menu").load("resources/menu/menu.html");
+        });
+    </script>
 </head>
 <body>
+<div id="menu">
+</div>
+
+<div align="center">
+    <h1>A category with the such name already exists. </h1>
+    <div th:text="${category.name}"> </div>
+    <a href="/addcategory">Back</a>
+    <a href="/listcategories">Go back to list categories</a>
+</div>
 
 </body>
 </html>

@@ -18,6 +18,18 @@ public class CategoryService implements CategoryServiceInterface {
 
 
     @Override
+    public boolean findByName(String name) {
+        if(categoryRepository.findByName(name)!=null)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+    @Override
     @Transactional
     public List<Category> getCategories() {
        return categoryRepository.findAll();

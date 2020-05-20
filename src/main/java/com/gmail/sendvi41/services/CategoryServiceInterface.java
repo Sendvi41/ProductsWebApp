@@ -10,6 +10,8 @@ public interface CategoryServiceInterface {
 
     List<Category> getCategories();
 
+    public boolean findByName (String name);
+
     void saveCategory(Category category);
 
     Category getCategory(Long id) throws ServiceResourceNotFoundException;

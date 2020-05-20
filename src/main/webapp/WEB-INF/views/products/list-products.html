@@ -1,13 +1,29 @@
+
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>mainpage</title>
+    <script
+            src="https://code.jquery.com/jquery-3.3.1.js"
+            integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+            crossorigin="anonymous">
+    </script>
+    <script>
+        $(function(){
+            $("#menu").load("resources/menu/menu.html");
+        });
+    </script>
+
 </head>
 <body>
+<div id="menu">
+</div>
+
 
 <div align="center">
+
     <h1>Products List</h1>
     <a href="/addproduct">Add product</a>
     <br>
@@ -43,17 +59,18 @@
 
             <td th:text="${#calendars.format(product.dateTime, 'dd/MM/yyyy')}"></td>
 
-<!--            <td th:text="${#calendars.format(product.dateTime, 'dd/MM/yyyy')}"></td>-->
-<!--            <td>-->
-<!--                <a th:href="/@{'/update/' + ${product.id}}">Edit</a>-->
-<!--                &nbsp;&nbsp;&nbsp;-->
-<!--                <a th:href="/@{'/delete/' + ${product.id}}">Delete</a>-->
-<!--            </td>-->
+            <!--            <td th:text="${#calendars.format(product.dateTime, 'dd/MM/yyyy')}"></td>-->
+            <!--            <td>-->
+            <!--                <a th:href="/@{'/update/' + ${product.id}}">Edit</a>-->
+            <!--                &nbsp;&nbsp;&nbsp;-->
+            <!--                <a th:href="/@{'/delete/' + ${product.id}}">Delete</a>-->
+            <!--            </td>-->
 
         </tr>
         </tbody>
     </table>
 </div>
+<!--    </span></div>-->
 
 </body>
 </html>

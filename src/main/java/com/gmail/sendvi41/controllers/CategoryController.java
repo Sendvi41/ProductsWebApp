@@ -39,9 +39,19 @@ public class CategoryController {
     }
 
     @PostMapping("/savecategory")
-    public String saveCategory(@ModelAttribute("category") Category category) {
-        categoryServiceInterface.saveCategory(category);
+    public String saveCategory(@ModelAttribute("category") Category category, Model model) {
+
+        if (categoryServiceInterface.findByName(category.getName())) {
+            model.addAttribute(category);
+            return "categories/categoryexsist";
+        } else {
+            categoryServiceInterface.saveCategory(category);
+        }
+
+
         return "redirect:/listcategories";
 
     }
+
+
 }
