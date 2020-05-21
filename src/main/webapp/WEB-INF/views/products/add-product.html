@@ -4,22 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <script
-            src="https://code.jquery.com/jquery-3.3.1.js"
-            integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
-            crossorigin="anonymous">
-    </script>
-    <script>
-        $(function(){
-            $("#menu").load("resources/menu/menu.html");
-        });
-    </script>
+    <link rel="stylesheet" th:href="@{/resources/css/mainmenu.css}">
 
 <!--    <link rel="stylesheet" href="/resources/css/date.css" type='text/css'>-->
 </head>
 <body>
-<div id="menu">
-</div>
+<div th:replace="menu/menu :: navbar">
+</div>>
 
 
 <div id="wrapper"><span>
@@ -32,13 +23,13 @@
         <table border="0" cellpadding="10">
             <tr>
                 <td>Product Name:</td>
-                <td><input type="text" th:field="*{name}"/></td>
+                <td><input type="text" th:field="*{name}" required/></td>
             </tr>
             <tr>
                 <td>Category:</td>
                 <td>
                     <div>
-                        <select th:field="*{category_id}">
+                        <select th:field="*{category_id}" required>
                             <option th:each="cat : ${categories}" th:value="${cat.id}"
                                     th:text="${cat.name}">
                             </option>
@@ -51,7 +42,7 @@
                 <td>Manufacturing firm:</td>
                 <td>
 
-                    <select th:field="*{manFirm_id}">
+                    <select th:field="*{manFirm_id}" required>
                         <option th:each="manf : ${manfirms}" th:value="${manf.id}"
                                 th:text="${manf.name}"></option>
                     </select>
@@ -62,7 +53,7 @@
                 <td>Unit:</td>
                 <td>
                     <form>
-                        <select th:field="*{unit_id}">
+                        <select th:field="*{unit_id}" required>
                             <option th:each="unit : ${units}" th:value="${unit.id}"
                                     th:text="${unit.name}"></option>
                         </select>

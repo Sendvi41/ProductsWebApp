@@ -9,16 +9,13 @@
             integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
             crossorigin="anonymous">
     </script>
-    <script>
-        $(function () {
-            $("#menu").load("resources/menu/menu.html");
-        });
-    </script>
+
     <link rel="stylesheet" href="/resources/css/diagram.css">
+    <link rel="stylesheet" th:href="@{/resources/css/mainmenu.css}">
 </head>
 <body>
-<div id="menu">
-</div>
+<div th:replace="menu/menu :: navbar">
+</div>>
 <div id="wrapper"><span>
 <div align="center">
     <h1>Categories</h1>

@@ -7,10 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 public class CategoryController {
@@ -33,6 +30,11 @@ public class CategoryController {
         model.addAttribute("category", category);
 
         return "categories/add-category";
+    }
+    @GetMapping("/test")
+    public String test(Model model) {
+
+        return "categories/test";
     }
 
     @PostMapping("/savecategory")
@@ -66,8 +68,8 @@ public class CategoryController {
 
 
     @PostMapping("/update/{id}")
-    public String updateStudent(@PathVariable("id") long id, @ModelAttribute("category") Category category,
-                                Model model) {
+    public String updateCategory(@PathVariable("id") long id, @ModelAttribute("category") Category category,
+                                 Model model) {
         try {
             categoryServiceInterface.getCategory(id);
             categoryServiceInterface.saveCategory(category);
@@ -80,7 +82,7 @@ public class CategoryController {
     }
 
     @GetMapping("delete/{id}")
-    public String deleteStudent(@PathVariable("id") long id, Model model) {
+    public String deleteCategory(@PathVariable("id") long id, Model model) {
         try {
             categoryServiceInterface.deleteCategory(id);
             return "redirect:/listcategories";
