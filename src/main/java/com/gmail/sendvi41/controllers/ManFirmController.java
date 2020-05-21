@@ -23,7 +23,7 @@ public class ManFirmController {
     @GetMapping("/listcmanfirms")
     public String showListManFirmsPage(Model model) {
         model.addAttribute("manfirms", manFirmServiceInterface.getManFirms());
-        return "manfirms/list-manfirm";
+        return "manfirms/list-manfirms";
     }
 
 
