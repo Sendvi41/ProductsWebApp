@@ -20,7 +20,7 @@ public class ManFirmController {
     ManFirmServiceInterface manFirmServiceInterface;
 
 
-    @GetMapping("/listcmanfirms")
+    @GetMapping("/listmanfirms")
     public String showListManFirmsPage(Model model) {
         model.addAttribute("manfirms", manFirmServiceInterface.getManFirms());
         return "manfirms/list-manfirms";
@@ -74,7 +74,7 @@ public class ManFirmController {
             manFirmServiceInterface.getManFirm(id);
             manFirmServiceInterface.saveManFirm(manFirm);
 
-            return "redirect:/listcmanfirms";
+            return "redirect:/listmanfirms";
         } catch (Exception ex) {
             return "manfirms/manfirm-deleted";
         }
@@ -86,9 +86,9 @@ public class ManFirmController {
     public String deleteManFirm(@PathVariable("id") long id, Model model) {
         try {
             manFirmServiceInterface.deleteManFirm(id);
-            return "redirect:/listcmanfirms";
+            return "redirect:/listmanfirms";
         } catch (Exception ex) {
-            return "redirect:/listcmanfirms";
+            return "redirect:/listmanfirms";
         }
 
     }
