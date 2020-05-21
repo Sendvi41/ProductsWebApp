@@ -48,5 +48,3 @@ public interface ProductRepository extends JpaRepository<Product, Long> {
 
 
 }
-//    select sum(p2.amount) from Product  group by p2.manFirm_id.name\n" +
-//        "                         having p2.manFirm_id.name=p.manFirm_id.name)
