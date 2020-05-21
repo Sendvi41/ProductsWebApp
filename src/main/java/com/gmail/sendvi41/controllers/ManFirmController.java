@@ -82,7 +82,7 @@ public class ManFirmController {
 
     }
 
-    @GetMapping("deletemanfirm/{id}")
+    @GetMapping("/deletemanfirm/{id}")
     public String deleteManFirm(@PathVariable("id") long id, Model model) {
         try {
             manFirmServiceInterface.deleteManFirm(id);

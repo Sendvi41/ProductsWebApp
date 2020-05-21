@@ -63,4 +63,12 @@ public class ManFirm {
     public int hashCode() {
         return Objects.hash(id, name, products);
     }
+
+    @Override
+    public String toString() {
+        return "ManFirm{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                '}';
+    }
 }

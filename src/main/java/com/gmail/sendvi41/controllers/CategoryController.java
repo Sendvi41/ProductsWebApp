@@ -77,7 +77,7 @@ public class CategoryController {
 
     }
 
-    @GetMapping("deletecategory/{id}")
+    @GetMapping("/deletecategory/{id}")
     public String deleteCategory(@PathVariable("id") long id, Model model) {
         try {
             categoryServiceInterface.deleteCategory(id);

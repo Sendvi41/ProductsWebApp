@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:th="http://www.thymeleaf.org">
@@ -11,7 +10,8 @@
 </head>
 <body>
 <div th:replace="menu/menu :: navbar">
-</div>>
+</div>
+>
 
 
 <div id="wrapper"><span>
@@ -32,6 +32,7 @@
             <th>unit price</th>
             <th>amount</th>
             <th>date of last delivery</th>
+            <th>actions</th>
         </tr>
         </thead>
         <tbody>
@@ -52,12 +53,11 @@
 
             <td th:text="${#calendars.format(product.dateTime, 'dd/MM/yyyy')}"></td>
 
-            <!--            <td th:text="${#calendars.format(product.dateTime, 'dd/MM/yyyy')}"></td>-->
-            <!--            <td>-->
-            <!--                <a th:href="/@{'/update/' + ${product.id}}">Edit</a>-->
-            <!--                &nbsp;&nbsp;&nbsp;-->
-            <!--                <a th:href="/@{'/delete/' + ${product.id}}">Delete</a>-->
-            <!--            </td>-->
+              <td>
+                  <a th:href="@{/editproduct/{id} (id=${product.id}) }">Update</a>
+                            &nbsp;&nbsp;&nbsp;
+                  <a th:href="@{/deleteproduct/{id} (id=${product.id}) }">Delete</a>
+              </td>
 
         </tr>
         </tbody>

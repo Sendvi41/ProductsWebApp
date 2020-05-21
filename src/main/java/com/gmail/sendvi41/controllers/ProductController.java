@@ -1,6 +1,7 @@
 package com.gmail.sendvi41.controllers;
 
 
+
 import com.gmail.sendvi41.entities.Product;
 import com.gmail.sendvi41.services.*;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,6 +13,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 
@@ -65,10 +67,53 @@ public class ProductController {
             productServiceInterface.saveProduct(product);
         }
 
-
         return "redirect:/";
+    }
+
+
+    @GetMapping("/editproduct/{id}")
+    public String showUpdateFormProduct(@PathVariable("id") long id, Model model) {
+        try {
+            Product product = productServiceInterface.getProduct(id);
+            model.addAttribute("categorie", categoryServiceInterface.getCategories());
+            model.addAttribute("manfirm", manFirmServiceInterface.getManFirms());
+            model.addAttribute("unit", unitServiceInterface.getUnits());
+            model.addAttribute("product", product);
+
+            return "products/update-product";
+        } catch (Exception ex) {
+            return "products/product-deleted";
+        }
+    }
+
+
+    @PostMapping("/updateproduct/{id}")
+    public String updateProduct(@PathVariable("id") long id, @ModelAttribute("category") Product product,
+                                 Model model) {
+        try {
+            productServiceInterface.getProduct(id);
+            productServiceInterface.saveProduct(product);
+
+            return "redirect:/";
+        } catch (Exception ex) {
+            return "products/product-deleted";
+        }
+
 
     }
+
+    @GetMapping("/deleteproduct/{id}")
+    public String deleteProduct(@PathVariable("id") long id, Model model) {
+        try {
+            productServiceInterface.deleteProduct(id);
+            return "redirect:/";
+        } catch (Exception ex) {
+            return "redirect:/";
+        }
+
+    }
+
+
 
 
 }

@@ -1,0 +1,90 @@
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" th:href="@{/resources/css/mainmenu.css}">
+
+
+</head>
+<body>
+<div th:replace="menu/menu :: navbar">
+</div>>
+
+<div id="wrapper"><span>
+<div align="center">
+
+    <h1>Update Product</h1>
+    <br/>
+    <form action="#" th:action="@{/updateproduct/{id}(id=${product.id})}" th:object="${product}"
+          method="post">
+         <table border="0" cellpadding="10">
+         <tr>
+                <td>Product Name:</td>
+                <td><input type="text" th:field="*{name}" required/></td>
+         </tr>
+
+            <tr>
+                <td>Category:</td>
+                <td>
+                    <div>
+                        <select th:field="*{category_id}" required>
+                            <option th:each="cat : ${categorie}" th:value="${cat.id}"
+                                    th:text="${cat.name}">
+                            </option>
+                        </select>
+                    </div>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Manufacturing firm:</td>
+                <td>
+                    <div>
+                    <select th:field="*{manFirm_id}" required>
+                        <option th:each="manf : ${manfirm}" th:value="${manf.id}"
+                                th:text="${manf.name}"></option>
+                    </select>
+                     </div>
+                </td>
+            </tr>
+            <tr>
+                <td>Unit:</td>
+                <td>
+                    <form>
+                        <select th:field="*{unit_id}" required>
+                            <option th:each="unit : ${unit}" th:value="${unit.id}"
+                                    th:text="${unit.name}"></option>
+                        </select>
+                    </form>
+                </td>
+            </tr>
+            <tr>
+                <td>Unit price:</td>
+                <td><input type="text" th:field="*{unit_price}"/></td>
+            </tr>
+            <tr>
+                <td>Amount:</td>
+                <td><input type="text" th:field="*{amount}"/></td>
+            </tr>
+            <tr>
+                <td>Date:</td>
+                <td><input   id="datetime-local" type="text" placeholder="dd/mm/yyyy" th:field="*{dateTime}"></td>
+                <!--                <td><input type="text"  th:field="*{dateTime}"/></td>-->
+            </tr>
+
+
+            <tr>
+                <td colspan="2">
+                    <button type="submit">Update</button>
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>
+
+</span></div>
+</body>
+</html>

@@ -64,4 +64,12 @@ public class Unit {
     public int hashCode() {
         return Objects.hash(id, name, products);
     }
+
+    @Override
+    public String toString() {
+        return "Unit{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                '}';
+    }
 }
