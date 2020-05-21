@@ -16,6 +16,20 @@ public class ManFirmService implements ManFirmServiceInterface {
     @Autowired
     ManFirmRepository manFirmRepository;
 
+
+    @Override
+    public boolean findByName(String name) {
+        if(manFirmRepository.findByName(name)!=null)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+
     @Override
     @Transactional
     public List<ManFirm> getManFirms() {

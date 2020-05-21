@@ -10,6 +10,7 @@ public interface ManFirmServiceInterface {
 
     List<ManFirm> getManFirms();
 
+    public boolean findByName (String name);
 
     void saveManFirm(ManFirm manFirm);
 

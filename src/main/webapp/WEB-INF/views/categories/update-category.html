@@ -18,7 +18,7 @@
 
     <h1>Update Category</h1>
     <br/>
-    <form action="#" th:action="@{/update/{id}=${category.id}}" th:object="${category}"
+    <form action="#" th:action="@{/updatecategory/{id}(id=${category.id})}" th:object="${category}"
           method="post">
 
         <table border="0" cellpadding="10">

@@ -31,11 +31,7 @@ public class CategoryController {
 
         return "categories/add-category";
     }
-    @GetMapping("/test")
-    public String test(Model model) {
 
-        return "categories/test";
-    }
 
     @PostMapping("/savecategory")
     public String saveCategory(@ModelAttribute("category") Category category, Model model) {
@@ -53,7 +49,7 @@ public class CategoryController {
     }
 
 
-    @GetMapping("/edit/{id}")
+    @GetMapping("/editcategory/{id}")
     public String showUpdateFormCategory(@PathVariable("id") long id, Model model) {
         try {
             Category category = categoryServiceInterface.getCategory(id);
@@ -67,7 +63,7 @@ public class CategoryController {
     }
 
 
-    @PostMapping("/update/{id}")
+    @PostMapping("/updatecategory/{id}")
     public String updateCategory(@PathVariable("id") long id, @ModelAttribute("category") Category category,
                                  Model model) {
         try {
@@ -81,7 +77,7 @@ public class CategoryController {
 
     }
 
-    @GetMapping("delete/{id}")
+    @GetMapping("deletecategory/{id}")
     public String deleteCategory(@PathVariable("id") long id, Model model) {
         try {
             categoryServiceInterface.deleteCategory(id);
