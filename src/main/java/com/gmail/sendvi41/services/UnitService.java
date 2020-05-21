@@ -16,6 +16,20 @@ public class UnitService implements UnitServiceInterface{
     @Autowired
     UnitRepository unitRepository;
 
+
+
+    @Override
+    public boolean findByName(String name) {
+        if(unitRepository.findByName(name)!=null)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
     @Override
     @Transactional
     public List<Unit> getUnits() {

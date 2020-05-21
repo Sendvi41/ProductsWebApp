@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" th:href="@{/resources/css/mainmenu.css}">
+</head>
+<body>
+<div th:replace="menu/menu :: navbar">
+</div>>
+<div id="wrapper"><span>
+<div align="center">
+
+    <h1>Add New Unit</h1>
+    <br/>
+    <form action="#" th:action="@{/saveunit}" th:object="${unit}"
+          method="post">
+
+        <table border="0" cellpadding="10">
+            <tr>
+                <td>Unit Name:</td>
+                <td><input type="text" th:field="*{name}" required/></td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <button type="submit">Add</button>
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>
+
+</span></div>
+</body>
+</html>

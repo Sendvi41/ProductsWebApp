@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>categories-list</title>
+    <link rel="stylesheet" th:href="@{/resources/css/mainmenu.css}">
+</head>
+<body>
+<div th:replace="menu/menu :: navbar">
+</div>>
+<div id="wrapper"><span>
+<div align="center">
+    <h1>Units List</h1>
+    <a href="/addunit">Add unit</a>
+    <br>
+    <br>
+    <table border="1" cellpadding="10">
+        <thead>
+        <tr>
+            <th>id</th>
+            <th>name</th>
+            <th>actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="unit: ${units}">
+            <td th:text="${unit.id}"></td>
+
+            <td th:text="${unit.name}"></td>
+
+                        <td>
+                            <a th:href="@{/editunit/{id} (id=${unit.id}) }">Update</a>
+                            &nbsp;&nbsp;&nbsp;
+                            <a th:href="@{/deleteunit/{id} (id=${unit.id}) }">Delete</a>
+                        </td>
+
+        </tr>
+        </tbody>
+    </table>
+</div>
+</span></div>
+</body>
+</html>

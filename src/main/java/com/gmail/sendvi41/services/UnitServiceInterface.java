@@ -10,6 +10,8 @@ public interface UnitServiceInterface {
 
     List<Unit> getUnits();
 
+    public boolean findByName (String name);
+
     void saveUnit(Unit unit);
 
     Unit getUnit(Long id) throws ServiceResourceNotFoundException;
