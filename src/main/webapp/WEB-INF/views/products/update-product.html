@@ -63,15 +63,16 @@
             </tr>
             <tr>
                 <td>Unit price:</td>
-                <td><input type="text" th:field="*{unit_price}"/></td>
+                <td><input type="text"  class = "onlyDigits" th:field="*{unit_price}" required/></td>
             </tr>
             <tr>
                 <td>Amount:</td>
-                <td><input type="text" th:field="*{amount}"/></td>
+                <td><input type="number" th:field="*{amount}" required/></td>
             </tr>
             <tr>
                 <td>Date:</td>
-                <td><input   id="datetime-local" type="text" placeholder="dd/mm/yyyy" th:field="*{dateTime}"></td>
+                <td><input   pattern="\d{2}\/\d{2}\/\d{4}" id="datetime-local" type="text" placeholder="dd/mm/yyyy" th:field="*{dateTime}" required>
+                </td>
                 <!--                <td><input type="text"  th:field="*{dateTime}"/></td>-->
             </tr>
 
@@ -86,5 +87,7 @@
 </div>
 
 </span></div>
+<script src="/resources/js/only_double_digits.js">
+</script>
 </body>
 </html>

@@ -2,6 +2,7 @@ package com.gmail.sendvi41.entities;
 
 
 import com.gmail.sendvi41.dto.ManFirmRequestDto;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
 import java.util.Date;
@@ -38,7 +39,7 @@ public class Product {
     @Column(name = "amount", nullable = false)
     private int amount;
 
-//    @DateTimeFormat(pattern = "dd-MM-yyyy")
+    @DateTimeFormat(pattern = "dd/MM/yyyy")
     @Column(name = "date_of_last_delivery", nullable = false)
     private Date dateTime;
 
