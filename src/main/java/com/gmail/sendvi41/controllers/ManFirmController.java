@@ -47,9 +47,7 @@ public class ManFirmController {
             manFirmServiceInterface.saveManFirm(manFirm);
         }
 
-
         return "redirect:/listmanfirms";
-
     }
 
 

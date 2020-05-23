@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <title>categories-list</title>
     <link rel="stylesheet" th:href="@{/resources/css/mainmenu.css}">
+    <link rel="stylesheet" th:href="@{/resources/css/buttonstyle.css}">
+    <link rel="stylesheet" th:href="@{/resources/css/updatedeletestyle.css}">
 </head>
 <body>
 <div th:replace="menu/menu :: navbar">
@@ -12,7 +14,7 @@
 <div id="wrapper"><span>
 <div align="center">
     <h1>Categories List</h1>
-    <a href="/addcategory">Add category</a>
+    <a  class="button28" href="/addcategory">Add category</a>
     <br>
     <br>
     <table border="1" cellpadding="10">
@@ -30,9 +32,11 @@
             <td th:text="${category.name}"></td>
 
                         <td>
-                            <a th:href="@{/editcategory/{id} (id=${category.id}) }">Update</a>
+                            <div class="container">
+                            <a  class="link" th:href="@{/editcategory/{id} (id=${category.id}) }">Update</a>
                             &nbsp;&nbsp;&nbsp;
-                            <a th:href="@{/deletecategory/{id} (id=${category.id}) }">Delete</a>
+                            <a class="link" th:href="@{/deletecategory/{id} (id=${category.id}) }">Delete</a>
+                                </div>
                         </td>
 
         </tr>

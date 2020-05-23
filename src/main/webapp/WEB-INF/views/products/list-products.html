@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <title>mainpage</title>
     <link rel="stylesheet" th:href="@{/resources/css/mainmenu.css}">
+    <link rel="stylesheet" th:href="@{/resources/css/buttonstyle.css}">
+    <link rel="stylesheet" th:href="@{/resources/css/updatedeletestyle.css}">
 
 
 </head>
@@ -18,7 +20,7 @@
 <div align="center">
 
     <h1>Products List</h1>
-    <a href="/addproduct">Add product</a>
+    <a href="/addproduct" class="button28">Add product</a>
     <br>
     <br>
     <table border="1" cellpadding="10">
@@ -54,9 +56,13 @@
             <td th:text="${#calendars.format(product.dateTime, 'dd/MM/yyyy')}"></td>
 
               <td>
-                  <a th:href="@{/editproduct/{id} (id=${product.id}) }">Update</a>
-                            &nbsp;&nbsp;&nbsp;
-                  <a th:href="@{/deleteproduct/{id} (id=${product.id}) }">Delete</a>
+                    <div class="container">
+                  <a class="link" th:href="@{/editproduct/{id} (id=${product.id}) }"  >Update</a>
+
+
+                  <a  class="link" th:href="@{/deleteproduct/{id} (id=${product.id}) }">Delete</a>
+                         </div>
+
               </td>
 
         </tr>
