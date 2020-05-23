@@ -2,6 +2,7 @@ package com.gmail.sendvi41.config;
 
 
 import com.gmail.sendvi41.conversions.*;
+import org.apache.log4j.PropertyConfigurator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
@@ -28,7 +29,6 @@ public class WebMvcConfig implements WebMvcConfigurer {
     @Autowired
     private ApplicationContext applicationContext;
 
-
     @Bean
     public SpringResourceTemplateResolver templateResolver() {
         SpringResourceTemplateResolver templateResolver = new SpringResourceTemplateResolver();
@@ -37,9 +37,6 @@ public class WebMvcConfig implements WebMvcConfigurer {
         templateResolver.setSuffix(".html");
         return templateResolver;
     }
-
-
-
 
     @Bean
     public SpringTemplateEngine templateEngine() {
@@ -63,8 +60,6 @@ public class WebMvcConfig implements WebMvcConfigurer {
         registry.addResourceHandler("/resources/**").addResourceLocations("/resources/");
         registry.addResourceHandler("/*.html").addResourceLocations("/WEB-INF/");
     }
-
-
 
 
 
@@ -93,18 +88,16 @@ public class WebMvcConfig implements WebMvcConfigurer {
     }
 
 
-
-
-
-
     @Override
     public void addFormatters(FormatterRegistry registry) {
         registry.addFormatter(typeFormatter());
         registry.addFormatter(manFirmFormatter());
         registry.addFormatter(unitFormatter());
-
-
     }
+
+
+
+
 }
 
 
