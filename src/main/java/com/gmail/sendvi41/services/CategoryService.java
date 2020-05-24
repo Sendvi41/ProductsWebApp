@@ -26,13 +26,13 @@ public class CategoryService implements CategoryServiceInterface {
 
         if(categoryRepository.findByName(name)!=null)
         {
-            logger.info(" Category object was found successfully by name" + name);
+            logger.info("Category object was found successfully by name" + name);
 
             return true;
         }
         else
         {
-            logger.info(" Category object not found by name" + name);
+            logger.info("Category object not found by name" + name);
             return false;
         }
     }
@@ -73,7 +73,7 @@ public class CategoryService implements CategoryServiceInterface {
             categoryRepository.deleteById(id);
             logger.info("Successfully delete a category type object"+ id);
         } else {
-            logger.warn(" Category object not found by id" + id);
+            logger.warn("Category object not found by id" + id);
             throw new ServiceResourceNotFoundException("No such id " + id);
         }
 
@@ -89,7 +89,7 @@ public class CategoryService implements CategoryServiceInterface {
             logger.info("Successfully save a category type object");
 
         } else {
-            logger.error(" Category object has no identifier");
+            logger.error("Category object has no identifier");
             throw new ServiceResourceNotFoundException("Id not specified");
         }
     }

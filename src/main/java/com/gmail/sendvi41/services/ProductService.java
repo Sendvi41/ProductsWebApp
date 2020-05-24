@@ -24,6 +24,8 @@ public class ProductService implements ProductServiceInterface {
     @Override
     @Transactional
     public List<ManFirmRequestDto> getJoinManFirmCategory() {
+        logger.info("Successful function launch getJoinManFirmCategory");
+
         return productRepository.getJoinManFirmCategory();
     }
 
@@ -31,6 +33,8 @@ public class ProductService implements ProductServiceInterface {
     @Override
     @Transactional
     public List<CategoryRequestDto> getSortCategories() {
+        logger.info("Successful function launch getSortCategories");
+
         return  productRepository.getSortCategories();
     }
 
@@ -45,6 +49,7 @@ public class ProductService implements ProductServiceInterface {
          }
          else
          {
+             logger.info("Product object not found by name" + name);
              return false;
          }
     }
@@ -54,18 +59,25 @@ public class ProductService implements ProductServiceInterface {
     @Override
     @Transactional
     public List<Product> getProducts() {
+        logger.info("Successful function launch getProducts");
+
         return productRepository.findAll();
     }
 
     @Override
     @Transactional
     public void saveProduct(Product product) {
+        logger.info("Successful function launch saveProduct");
+
         productRepository.save(product);
+        logger.info("Successfully save a product type object");
     }
 
     @Override
     @Transactional
     public Product getProduct(Long id) throws ServiceResourceNotFoundException {
+        logger.info("Successful function launch getProduct");
+
         return productRepository.findById(id).orElseThrow(
                 () -> new ServiceResourceNotFoundException("No such id "+id)
         );
@@ -75,9 +87,16 @@ public class ProductService implements ProductServiceInterface {
     @Override
     @Transactional
     public void deleteProduct(Long id) throws ServiceResourceNotFoundException {
+        logger.info("Successful function launch deleteProduct");
+
         if (productRepository.findById(id).isPresent()) {
+            logger.info("An object of type product was successfully found by id" + id);
+
             productRepository.deleteById(id);
+            logger.info("Successfully delete a product type object"+ id);
+
         } else {
+            logger.warn("Product object not found by id" + id);
             throw new ServiceResourceNotFoundException("No such id "+id);
         }
 
@@ -86,10 +105,14 @@ public class ProductService implements ProductServiceInterface {
     @Override
     @Transactional
     public void updateProduct(Product product) throws ServiceResourceNotFoundException{
+        logger.info("Successful function launch updateProduct");
+
         if(product.getId()!=0) {
             productRepository.save(product);
+            logger.info("Successfully save a product type object");
         }
         else{
+            logger.error("Product object has no identifier");
             throw new ServiceResourceNotFoundException("Id not specified");
         }
     }

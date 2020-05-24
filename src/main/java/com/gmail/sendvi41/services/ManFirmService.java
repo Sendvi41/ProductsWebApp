@@ -30,7 +30,7 @@ public class ManFirmService implements ManFirmServiceInterface {
         }
         else
         {
-            logger.info(" ManFirm object not found by name" + name);
+            logger.info("ManFirm object not found by name" + name);
             return false;
         }
     }
