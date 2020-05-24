@@ -8,11 +8,14 @@ import com.gmail.sendvi41.repositories.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.apache.log4j.Logger;
 
 import java.util.List;
 
 @Service
 public class ProductService implements ProductServiceInterface {
+
+    private final Logger logger = Logger.getLogger(ProductService.class.getName());
 
     @Autowired
     ProductRepository productRepository;
@@ -34,8 +37,10 @@ public class ProductService implements ProductServiceInterface {
     @Override
     @Transactional
     public boolean findByName (String name) {
+        logger.info("Successful function launch findByName");
          if(productRepository.findByName(name)!=null)
          {
+             logger.info("Product object was found successfully by name" + name);
              return true;
          }
          else
