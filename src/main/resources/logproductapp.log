@@ -1,0 +1,91 @@
+2020-05-24 16:15:03 INFO  LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [
+	name: myJpaPersistenceUnit
+	...]
+2020-05-24 16:15:03 INFO  Version:45 - HHH000412: Hibernate Core {5.2.6.Final}
+2020-05-24 16:15:03 INFO  Environment:213 - HHH000206: hibernate.properties not found
+2020-05-24 16:15:03 INFO  Version:66 - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2020-05-24 16:15:04 INFO  Dialect:157 - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2020-05-24 16:15:05 INFO  Version:30 - HV000001: Hibernate Validator 5.4.1.Final
+2020-05-24 16:15:08 INFO  QueryTranslatorFactoryInitiator:47 - HHH000397: Using ASTQueryTranslatorFactory
+2020-05-24 16:15:09 INFO  ProductController:48 - Successful function launch showListProducts
+2020-05-24 16:15:10 INFO  ProductService:62 - Successful function launch getProducts
+2020-05-24 16:15:10 INFO  ProductController:51 - Getting all objects of type products
+2020-05-24 16:15:10 INFO  ProductController:54 - Transferring objects of type product to view
+2020-05-24 16:15:10 INFO  ProductController:48 - Successful function launch showListProducts
+2020-05-24 16:15:10 INFO  ProductService:62 - Successful function launch getProducts
+2020-05-24 16:15:10 INFO  ProductController:51 - Getting all objects of type products
+2020-05-24 16:15:10 INFO  ProductController:54 - Transferring objects of type product to view
+2020-05-24 16:15:11 INFO  ProductController:48 - Successful function launch showListProducts
+2020-05-24 16:15:11 INFO  ProductService:62 - Successful function launch getProducts
+2020-05-24 16:15:11 INFO  ProductController:51 - Getting all objects of type products
+2020-05-24 16:15:11 INFO  ProductController:54 - Transferring objects of type product to view
+2020-05-24 16:15:22 INFO  ProductController:61 - Successful function launch showAddProductPage
+2020-05-24 16:15:22 INFO  ProductController:64 - Product type object created
+2020-05-24 16:15:22 INFO  ProductController:67 - Transferring object of type product to view
+2020-05-24 16:15:22 INFO  CategoryService:43 - Successful function launch getCategories
+2020-05-24 16:15:22 INFO  ProductController:71 - Getting all objects of type category and transferring objects to view
+2020-05-24 16:15:22 INFO  ManFirmService:42 - Successful function launch getManFirms
+2020-05-24 16:15:22 INFO  ProductController:74 - Getting all objects of type manfirm and transferring objects to view
+2020-05-24 16:15:22 INFO  UnitService:42 - Successful function launch getUnits
+2020-05-24 16:15:22 INFO  ProductController:77 - Getting all objects of type unit and transferring objects to view
+2020-05-24 16:15:22 INFO  CategoryFormatter:37 - Successful function launch parse
+2020-05-24 16:15:22 INFO  CategoryFormatter:40 - ID recognition successful2
+2020-05-24 16:15:22 INFO  CategoryService:59 - Successful function launch getCategory
+2020-05-24 16:15:22 INFO  CategoryFormatter:37 - Successful function launch parse
+2020-05-24 16:15:22 INFO  CategoryFormatter:40 - ID recognition successful1
+2020-05-24 16:15:22 INFO  CategoryService:59 - Successful function launch getCategory
+2020-05-24 16:15:22 INFO  CategoryFormatter:37 - Successful function launch parse
+2020-05-24 16:15:22 INFO  CategoryFormatter:40 - ID recognition successful952
+2020-05-24 16:15:22 INFO  CategoryService:59 - Successful function launch getCategory
+2020-05-24 16:15:22 INFO  CategoryFormatter:37 - Successful function launch parse
+2020-05-24 16:15:22 INFO  CategoryFormatter:40 - ID recognition successful3
+2020-05-24 16:15:22 INFO  CategoryService:59 - Successful function launch getCategory
+2020-05-24 16:15:22 INFO  CategoryFormatter:37 - Successful function launch parse
+2020-05-24 16:15:22 INFO  CategoryFormatter:40 - ID recognition successful7952
+2020-05-24 16:15:22 INFO  CategoryService:59 - Successful function launch getCategory
+2020-05-24 16:15:22 INFO  ManFirmFormatter:39 - Successful function launch parse
+2020-05-24 16:15:22 INFO  ManFirmFormatter:42 - ID recognition successful52
+2020-05-24 16:15:22 INFO  ManFirmService:58 - Successful function launch getManFirm
+2020-05-24 16:15:22 INFO  ManFirmFormatter:39 - Successful function launch parse
+2020-05-24 16:15:22 INFO  ManFirmFormatter:42 - ID recognition successful4
+2020-05-24 16:15:22 INFO  ManFirmService:58 - Successful function launch getManFirm
+2020-05-24 16:15:22 INFO  ManFirmFormatter:39 - Successful function launch parse
+2020-05-24 16:15:22 INFO  ManFirmFormatter:42 - ID recognition successful3
+2020-05-24 16:15:22 INFO  ManFirmService:58 - Successful function launch getManFirm
+2020-05-24 16:15:22 INFO  ManFirmFormatter:39 - Successful function launch parse
+2020-05-24 16:15:22 INFO  ManFirmFormatter:42 - ID recognition successful2
+2020-05-24 16:15:22 INFO  ManFirmService:58 - Successful function launch getManFirm
+2020-05-24 16:15:22 INFO  ManFirmFormatter:39 - Successful function launch parse
+2020-05-24 16:15:22 INFO  ManFirmFormatter:42 - ID recognition successful1
+2020-05-24 16:15:22 INFO  ManFirmService:58 - Successful function launch getManFirm
+2020-05-24 16:15:22 INFO  UnitFormatter:39 - Successful function launch parse
+2020-05-24 16:15:22 INFO  UnitFormatter:42 - ID recognition successful3
+2020-05-24 16:15:22 INFO  UnitService:58 - Successful function launch getUnit
+2020-05-24 16:15:22 INFO  UnitFormatter:39 - Successful function launch parse
+2020-05-24 16:15:22 INFO  UnitFormatter:42 - ID recognition successful2
+2020-05-24 16:15:22 INFO  UnitService:58 - Successful function launch getUnit
+2020-05-24 16:15:22 INFO  UnitFormatter:39 - Successful function launch parse
+2020-05-24 16:15:22 INFO  UnitFormatter:42 - ID recognition successful1
+2020-05-24 16:15:22 INFO  UnitService:58 - Successful function launch getUnit
+2020-05-24 16:15:22 INFO  UnitFormatter:39 - Successful function launch parse
+2020-05-24 16:15:22 INFO  UnitFormatter:42 - ID recognition successful153
+2020-05-24 16:15:22 INFO  UnitService:58 - Successful function launch getUnit
+2020-05-24 16:16:14 INFO  CategoryFormatter:37 - Successful function launch parse
+2020-05-24 16:16:14 INFO  CategoryFormatter:40 - ID recognition successful1
+2020-05-24 16:16:14 INFO  CategoryService:59 - Successful function launch getCategory
+2020-05-24 16:16:14 INFO  ManFirmFormatter:39 - Successful function launch parse
+2020-05-24 16:16:14 INFO  ManFirmFormatter:42 - ID recognition successful2
+2020-05-24 16:16:14 INFO  ManFirmService:58 - Successful function launch getManFirm
+2020-05-24 16:16:14 INFO  UnitFormatter:39 - Successful function launch parse
+2020-05-24 16:16:14 INFO  UnitFormatter:42 - ID recognition successful3
+2020-05-24 16:16:14 INFO  UnitService:58 - Successful function launch getUnit
+2020-05-24 16:16:14 INFO  ProductController:84 - Successful function launch saveProduct
+2020-05-24 16:16:14 INFO  ProductService:44 - Successful function launch findByName
+2020-05-24 16:16:14 INFO  ProductService:52 - Product object not found by nameSushi
+2020-05-24 16:16:14 INFO  ProductService:70 - Successful function launch saveProduct
+2020-05-24 16:16:14 INFO  ProductService:73 - Successfully save a product type object
+2020-05-24 16:16:14 INFO  ProductController:95 - Successfully save a product type object
+2020-05-24 16:16:14 INFO  ProductController:48 - Successful function launch showListProducts
+2020-05-24 16:16:14 INFO  ProductService:62 - Successful function launch getProducts
+2020-05-24 16:16:14 INFO  ProductController:51 - Getting all objects of type products
+2020-05-24 16:16:14 INFO  ProductController:54 - Transferring objects of type product to view
