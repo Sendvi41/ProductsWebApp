@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <title>exsist</title>
     <link rel="stylesheet" th:href="@{/resources/css/mainmenu.css}">
+    <link rel="stylesheet" th:href="@{/resources/css/buttonstyle.css}">
 </head>
 <body>
 <div th:replace="menu/menu :: navbar">
@@ -13,8 +14,8 @@
 <div align="center">
     <h1>A unit with the such name already exists. </h1>
     <div th:text="${unit.name}"> </div>
-    <a href="/addunit">Back</a>
-    <a href="/listunits">Go back to list units</a>
+    <a class="button28"  href="/addunit">Back</a>
+    <a  class="button28" href="/listunits">Go back to list units</a>
 </div>
 </span></div>
 </body>

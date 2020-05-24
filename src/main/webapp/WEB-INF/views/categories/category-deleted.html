@@ -3,8 +3,9 @@
       xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>exsist</title>
+    <title>already been deleted</title>
     <link rel="stylesheet" th:href="@{/resources/css/mainmenu.css}">
+    <link rel="stylesheet" th:href="@{/resources/css/buttonstyle.css}">
 </head>
 <body>
 <div th:replace="menu/menu :: navbar">
@@ -12,7 +13,7 @@
 <div id="wrapper"><span>
 <div align="center">
     <h1>Unfortunately, the category has already been deleted. </h1>
-    <a href="/listcategories">Go back to list categories</a>
+    <a class="button28" href="/listcategories">Go back to list categories</a>
 </div>
 </span></div>
 </body>

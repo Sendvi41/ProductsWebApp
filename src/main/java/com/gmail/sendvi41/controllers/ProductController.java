@@ -84,7 +84,7 @@ public class ProductController {
         logger.info("Successful function launch saveProduct");
 
         if (productServiceInterface.findByName(product.getName())) {
-            logger.info("An object with the type product already exists");
+            logger.info("An object with the type product already exists, name " + product.getName());
 
             model.addAttribute(product);
             logger.info("Transferring object of type product to view");
@@ -105,7 +105,7 @@ public class ProductController {
 
         try {
             Product product = productServiceInterface.getProduct(id);
-            logger.info("Product type object found successfully by id");
+            logger.info("Product type object found successfully by id" + id);
 
             model.addAttribute("categorie", categoryServiceInterface.getCategories());
             logger.info("Getting all objects of type category and transferring objects to view");
@@ -133,14 +133,14 @@ public class ProductController {
         logger.info("Successful function launch updateProduct");
         try {
             productServiceInterface.getProduct(id);
-            logger.info("Product type object found successfully by id");
+            logger.info("Product type object found successfully by" + id);
 
             productServiceInterface.saveProduct(product);
             logger.info("Successfully save a product type object");
 
             return "redirect:/";
         } catch (Exception ex) {
-            logger.warn("Object product by identifier not found");
+            logger.warn("Object product by identifier not found" +ex);
             return "products/product-deleted";
         }
 
@@ -153,11 +153,11 @@ public class ProductController {
 
         try {
             productServiceInterface.deleteProduct(id);
-            logger.info("Successfully delete a product type object");
+            logger.info("Successfully delete a product type object " + id);
 
             return "redirect:/";
         } catch (Exception ex) {
-            logger.warn("This product type object was not found.");
+            logger.warn("This product type object was not found " + id + " "+ ex );
             return "redirect:/";
         }
 

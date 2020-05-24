@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <title>exsist</title>
     <link rel="stylesheet" th:href="@{/resources/css/mainmenu.css}">
+    <link rel="stylesheet" th:href="@{/resources/css/buttonstyle.css}">
 </head>
 <body>
 <div th:replace="menu/menu :: navbar">
@@ -13,8 +14,8 @@
 <div align="center">
     <h1>A category with the such name already exists. </h1>
     <div th:text="${category.name}"> </div>
-    <a href="/addcategory">Back</a>
-    <a href="/listcategories">Go back to list categories</a>
+    <a class="button28" href="/addcategory">Back</a>
+    <a class="button28" href="/listcategories">Go back to list categories</a>
 </div>
 </span></div>
 </body>
