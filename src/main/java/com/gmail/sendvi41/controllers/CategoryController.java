@@ -50,11 +50,14 @@ public class CategoryController {
         logger.info("Successful function launch saveCategory");
 
         if (categoryServiceInterface.findByName(category.getName())) {
+            logger.info("An object with the type category already exists, name " + category.getName());
+
             model.addAttribute(category);
             logger.info("Transferring object of type category to view");
             return "categories/categoryexsist";
         } else {
             categoryServiceInterface.saveCategory(category);
+            logger.info("Successfully save a category type object");
         }
 
 
@@ -65,13 +68,18 @@ public class CategoryController {
 
     @GetMapping("/editcategory/{id}")
     public String showUpdateFormCategory(@PathVariable("id") long id, Model model) {
+        logger.info("Successful function launch showUpdateFormCategory");
+
         try {
             Category category = categoryServiceInterface.getCategory(id);
+            logger.info("Category type object found successfully by id" + id);
 
             model.addAttribute("category", category);
+            logger.info("Transferring object of type category to view");
 
             return "categories/update-category";
         } catch (Exception ex) {
+            logger.warn("Object category by identifier" + id + "not found" + ex);
             return "categories/category-deleted";
         }
     }
@@ -80,11 +88,17 @@ public class CategoryController {
     @PostMapping("/updatecategory/{id}")
     public String updateCategory(@PathVariable("id") long id, @ModelAttribute("category") Category category,
                                  Model model) {
+        logger.info("Successful function launch updateCategory");
         try {
             categoryServiceInterface.getCategory(id);
+            logger.info("Category type object found successfully by" + id);
+
             categoryServiceInterface.saveCategory(category);
+            logger.info("Successfully save a category type object");
+
             return "redirect:/listcategories";
         } catch (Exception ex) {
+            logger.warn("Object category by identifier" +id + "not found" +ex);
             return "categories/category-deleted";
         }
 
@@ -93,10 +107,15 @@ public class CategoryController {
 
     @GetMapping("/deletecategory/{id}")
     public String deleteCategory(@PathVariable("id") long id, Model model) {
+        logger.info("Successful function launch deleteCategory");
         try {
             categoryServiceInterface.deleteCategory(id);
+            logger.info("Successfully delete a category type object " + id);
+
             return "redirect:/listcategories";
         } catch (Exception ex) {
+            logger.warn("This category type object was not found " + id + " "+ ex );
+
             return "redirect:/listcategories";
         }
 

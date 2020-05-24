@@ -121,7 +121,7 @@ public class ProductController {
 
             return "products/update-product";
         } catch (Exception ex) {
-            logger.warn("Object product by identifier not found");
+            logger.warn("Object product by identifier" + id + "not found" + ex);
             return "products/product-deleted";
         }
     }
@@ -140,7 +140,7 @@ public class ProductController {
 
             return "redirect:/";
         } catch (Exception ex) {
-            logger.warn("Object product by identifier not found" +ex);
+            logger.warn("Object product by identifier" + id + "not found" +ex);
             return "products/product-deleted";
         }
 

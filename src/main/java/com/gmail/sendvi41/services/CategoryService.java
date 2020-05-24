@@ -1,5 +1,6 @@
 package com.gmail.sendvi41.services;
 
+import com.gmail.sendvi41.controllers.CategoryController;
 import com.gmail.sendvi41.entities.Category;
 import com.gmail.sendvi41.exceptions.ServiceResourceNotFoundException;
 import com.gmail.sendvi41.repositories.CategoryRepository;
@@ -8,10 +9,12 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
-
+import org.apache.log4j.Logger;
 
 @Service
 public class CategoryService implements CategoryServiceInterface {
+
+    private final Logger logger = Logger.getLogger(CategoryService.class.getName());
 
     @Autowired
     CategoryRepository categoryRepository;
