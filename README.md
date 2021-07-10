@@ -8,7 +8,7 @@
 - log4j 
 - ApacheTomcat 
 - Maven 
-- Html
-- Js
-- Css
+- HTML
+- JavaScript
+- CSS
 - Oracle DB
